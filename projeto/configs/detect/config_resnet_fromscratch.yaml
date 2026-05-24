@@ -1,0 +1,54 @@
+# config.yaml
+# Training configuration for train_detec.py.
+
+wandb:
+  activate: True
+  project: "my_ssl_project_detection"
+  entity: "rainbow_ai"
+
+# Number of samples per batch.
+BATCH_SIZE: 8
+
+# Number of training epochs.
+NUM_EPOCHS: 5
+
+# Initial learning rate.
+INITIAL_LR: 5e-3
+
+# Number of DataLoader workers.
+NUM_WORKERS: 2
+
+# TensorBoard and checkpoint experiment group.
+experiment_group_name: resnet50_detect_scratch
+
+# UniversalBackbone architecture.
+# Supported values: resnet50, vgg11_detect, vit_b_16_detect, efficientnet-b0
+architecture: resnet50
+
+# Whether UniversalBackbone should start from ImageNet pretrained weights.
+pretrained: False
+
+# Optional separate backbone learning rate.
+# If null, INITIAL_LR is used.
+BACKBONE_LR: null
+
+# Whether to freeze the encoder/backbone.
+freeze_backbone: False
+
+#path to save csv
+CSV_RESULTS_PATH: /home/wesna/Doutorado/2026-MO437-course-work-G4/experiments_csv/
+
+#seed
+SEED: 42
+
+# Whether to save the trained encoder as UniversalBackbone.
+EXPORT_TRAINED_BACKBONE: True
+
+# Root folder for model checkpoints.
+CHECKPOINT_ROOT: my_detection_models
+
+# Logging frequency.
+LOG_EVERY_N_STEPS: 10
+
+#path to save predict images
+PATH_PREDICT: predict/detect/

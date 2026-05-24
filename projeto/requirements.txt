@@ -1,0 +1,24 @@
+--index-url https://download.pytorch.org/whl/cu128
+--extra-index-url https://pypi.org/simple
+
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+torchaudio==2.7.1+cu128
+
+lightning==2.5.2
+torchmetrics==1.7.2
+segmentation-models-pytorch==0.3.4
+timm==0.9.7
+efficientnet-pytorch==0.7.1
+pretrainedmodels==0.7.4
+
+tensorboard==2.19.0
+pycocotools==2.0.10
+numpy==1.26.4
+matplotlib==3.10.3
+Pillow==11.2.1
+ipywidgets==8.1.7
+jupytext==1.17.2
+pyyaml==6.0.2
+setuptools==81.0.0
+wandb

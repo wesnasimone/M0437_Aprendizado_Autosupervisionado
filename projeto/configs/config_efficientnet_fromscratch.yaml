@@ -1,0 +1,59 @@
+# config.yaml
+# Training configuration for train_seg.py.
+
+# Number of samples per batch.
+BATCH_SIZE: 16
+
+# Number of training epochs.
+NUM_EPOCHS: 50
+
+# Initial learning rate.
+INITIAL_LR: 0.001
+
+# Number of DataLoader workers.
+NUM_WORKERS: 2
+
+# TensorBoard and checkpoint experiment group.
+experiment_group_name: efficientnet-b0_segmentation_fromscratch
+
+# UniversalBackbone architecture.
+# Supported values: resnet50, efficientnet-b0, vgg11, densenet169
+architecture: efficientnet-b0
+
+
+# Whether UniversalBackbone should start from ImageNet pretrained weights.
+pretrained: false
+
+# Optional separate backbone learning rate.
+# If null, INITIAL_LR is used.
+BACKBONE_LR: null
+
+# Whether to freeze the segmentation encoder/backbone.
+freeze_backbone: false
+
+# Final image size as [height, width].
+IMAGE_SIZE: [352, 640]
+
+# Whether train_seg.py should download/extract the dataset automatically.
+DOWNLOAD_DATASET: true
+
+# Dataset storage folder.
+DATA_FOLDER: data
+
+# Root folder for TensorBoard logs.
+TB_LOG_ROOT: tb_logs
+
+# Root folder for model checkpoints.
+CHECKPOINT_ROOT: my_seg_models
+
+# Logging frequency.
+LOG_EVERY_N_STEPS: 10
+
+# Reproducibility seed.
+SEED: 42
+
+# Whether to save the trained segmentation encoder as UniversalBackbone.
+EXPORT_TRAINED_BACKBONE: true
+
+# CSV file where one row of hyperparameters and metrics is appended after each run.
+CSV_RESULTS_PATH: experiments_csv/
